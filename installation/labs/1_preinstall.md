@@ -1,6 +1,6 @@
-##All the commands used refer to CentOS 7
+## All the commands used refer to CentOS 7
 
-###Swappiness Values:
+### Swappiness Values:
 
 How to view the swappiness :
 
@@ -19,7 +19,7 @@ To change the swappiness in runtime: `sudo sysctl -w vm.swappiness={value} `
 To change it at boot time : edit `/etc/sysctl.conf` and add `vm.swappiness={value}` to the end of it if not already there and edit it if already present.  
 
 
-###Mount Details.
+### Mount Details.
 
 All the nodes have the 30GB volume mounted at **/dev/xvda**
 
@@ -44,7 +44,7 @@ Disk identifier: 0x000123f5
  
 ![disk_details](../png/disk_details.png)
  
-###Transparent Hugepage(THP):
+### Transparent Hugepage(THP):
 
 To view the status of the current THP : 
 ```bash
@@ -69,7 +69,7 @@ echo never > /sys/kernel/mm/transparent_hugepage/enabled
 echo never > /sys/kernel/mm/transparent_hugepage/defrag
 ```
 
-###Network Config:
+### Network Config:
 
 All my nodes have access to the internet and they have a single ethernet connection.
 
@@ -83,14 +83,14 @@ All internal and external host mappings :
 
 ![nslookup](../png/nslookup_out.png)
 
-####nscd :
+#### nscd :
 nscd is not installed by default in the AMI I chose. So installing it using `sudo yum install nscd`
 
 Service Status : 
 
 ![nscd](../png/nscd_service.png)
 
-####ntp :
+#### ntp :
 ntp is also not installed by default in the AMI. So installing it using `yum install ntp ntpdate ntp-doc` 
 
 Service Status :
@@ -99,7 +99,7 @@ Service Status :
 
 
 
-##MySQL Installation :
+## MySQL Installation :
 
 * Get the repo file from [MySQL Repo](https://dev.mysql.com/downloads/file/?id=465603)
 * Install the downloaded repo package : `sudo rpm -Uvh {filename}`
