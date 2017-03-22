@@ -155,3 +155,34 @@ sudo systemctl daemon-reload
 sudo systemctl restart mysqld.service
 ```
 
+* Create the databases required by CM :
+ ```commandline
+    create database amon DEFAULT CHARACTER SET utf8;
+    grant all on amon.* to 'amon'@'%' IDENTIFIED BY 'amon_password';
+    
+    create database rman DEFAULT CHARACTER SET utf8;
+    grant all on rman.* to 'rman'@'%' IDENTIFIED BY 'rman_password';
+    
+    create database metastore DEFAULT CHARACTER SET utf8;
+    grant all on hive.* to 'hive'@'%' IDENTIFIED BY 'hive_password';
+    
+    create database sentry DEFAULT CHARACTER SET utf8;
+    grant all on sentry.* to 'sentry'@'%' IDENTIFIED BY 'sentry_password';
+    
+    create database nav DEFAULT CHARACTER SET utf8;
+    grant all on nav.* to 'nav'@'%' IDENTIFIED BY 'nav_password';
+    
+    create database navms DEFAULT CHARACTER SET utf8;
+    grant all on navms.* to 'navms'@'%' IDENTIFIED BY 'navms_password';
+    
+    create database scm DEFAULT CHARACTER SET utf8;
+    grant all on scm.* to 'scm'@'%' IDENTIFIED BY 'scm_password';
+    
+    create database oozie DEFAULT CHARACTER SET utf8;
+    grant all on oozie.* to 'oozie'@'%' IDENTIFIED BY 'oozie_password';
+    
+    create database hive DEFAULT CHARACTER SET utf8;
+    create database hue DEFAULT CHARACTER SET utf8;
+    grant all on hive.* to 'hive'@'%' IDENTIFIED BY 'hive_password';
+    grant all on hue.* to 'hue'@'%' IDENTIFIED BY 'hue_password';
+```
